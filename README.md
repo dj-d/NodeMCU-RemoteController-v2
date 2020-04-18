@@ -43,5 +43,3 @@ NodeMCU sketch to control IR devices
 ### Development
 - [ ] Button to reset wifi
 - [ ] Add more devices
-
-
