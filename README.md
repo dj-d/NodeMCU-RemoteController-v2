@@ -13,7 +13,7 @@ NodeMCU sketch to control IR devices
     - Body of JSON:
        ```json
          {
-           "action": "on"
+           "action": "YOUR_ACTION"
          }
        ```
 
