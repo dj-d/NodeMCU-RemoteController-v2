@@ -163,7 +163,7 @@ void setup() {
 
   Serial.println("Connected");
 
-  server.on("/", checkArgs);
+  server.on("/rc", checkArgs);
 
   server.begin(); 
 }

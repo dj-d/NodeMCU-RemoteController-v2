@@ -9,7 +9,7 @@ NodeMCU sketch to control IR devices
     - API:
         | Command | Description |
         | --- | --- |
-        | / | To start the action described in the body |
+        | /rc | To start the action described in the body |
     - Body of JSON:
        ```json
          {
