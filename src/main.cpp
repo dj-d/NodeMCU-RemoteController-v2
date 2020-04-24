@@ -48,23 +48,6 @@ String last_eq_selected = "music";
 /*********************************************************************/
 
 /**
- * Send response
- * 
- * @param html_code HTML status code
- * @param message 
- */
-void sendResponse(int html_code, String message) {
-    String body;
-    DynamicJsonDocument raw_body(1024);
-
-    raw_body["msg"] = message;
-
-    serializeJson(raw_body, body);
-
-    server.send(html_code, "text/json", body);
-}
-
-/**
  * Send the command to the TV
  * @param arg is the command received
  */
@@ -113,28 +96,29 @@ void checkArgs() {
     
     bool res;
 
-    DynamicJsonDocument body(1024);
+    DynamicJsonDocument request_body(1024);
+    DynamicJsonDocument response_body(1024);
 
     if (server.hasArg("plain") == false) {
         html_code = 400;
-        message = "Body not found";
+        response_body["msg"] = "Body not found";
     } else {
-      deserializeJson(body, server.arg("plain"));
+      deserializeJson(request_body, server.arg("plain"));
 
-      String action = body["action"];
+      String action = request_body["action"];
       
       res = sendAction(action);
       
       if (res) {
         html_code = 200;
-        message = "Successful action";
+        response_body["msg"] = "Successful action";
       } else {
         html_code = 400;
-        message = "Action not found";
+        response_body["msg"] = "Action not found";
       }
     }
 
-    sendResponse(html_code, message);
+    server.send(html_code, "text/json", message);
 }
 
 /*********************************************************************/
