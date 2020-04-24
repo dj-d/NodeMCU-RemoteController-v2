@@ -2,35 +2,35 @@
 
 NodeMCU sketch to control IR devices
 
-### Using
+## Using
 
 - To connect the device to the network visit: __[tzapu/WiFIManager](https://github.com/tzapu/WiFiManager)__
-- API:
+- __API__
     
-  | Description | Method | Endpoint | Paramethers |
+  | Description | Method | Endpoint | Body elements |
   | --- | --- | --- | --- |
   | To start the action described in the body | __POST__ | /rc | "*__action__*" |
 
-- Supported actions:
+- __Supported actions__
 
   | Action | Description |
   | --- | --- |
-  | on | Turn on or turn off |
-  | input | Open input menu |
-  | settings | Open settings menu |
-  | vol_up | Turn up the volume |
-  | vol_down | Turn down the volume |
-  | vol_mute | Turn off the volume |
-  | prog_up | Change to the next channel |
-  | prog_down | Change to the previous channel |
-  | arrow_up | Arrow up button |
-  | arrow_down | Arrow down button |
-  | arrow_left | Arrow left button |
-  | arrow_right | Arrow right button |
-  | back | Back button |
-  | ok | Ok button |
+  | *on* | Turn on or turn off |
+  | *input* | Open input menu |
+  | *settings* | Open settings menu |
+  | *vol_up* | Turn up the volume |
+  | *vol_down* | Turn down the volume |
+  | *vol_mute* | Turn off the volume |
+  | *prog_up* | Change to the next channel |
+  | *prog_down* | Change to the previous channel |
+  | *arrow_up* | Arrow up button |
+  | *arrow_down* | Arrow down button |
+  | *arrow_left* | Arrow left button |
+  | *arrow_right* | Arrow right button |
+  | *back* | Back button |
+  | *ok* | Ok button |
 
-- Examples:
+- __Examples__
 
   - Request body for "*__/rc__*":
     ```json
@@ -46,7 +46,7 @@ NodeMCU sketch to control IR devices
         }
     ```
 
-### Supported devices
+## Supported devices
 
 - [x] LG TV
 - [ ] Samsung TV
@@ -54,7 +54,7 @@ NodeMCU sketch to control IR devices
 - [ ] Silvercrest soundbar
 - [ ] Samsung soundbar
 
-### Development
+## Development
 
 - [ ] Button to reset wifi
 - [ ] Add more devices

@@ -118,6 +118,8 @@ void checkArgs() {
       }
     }
 
+    serializeJson(response_body, message);
+
     server.send(html_code, "text/json", message);
 }
 
