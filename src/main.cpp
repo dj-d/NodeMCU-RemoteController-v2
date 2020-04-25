@@ -164,7 +164,7 @@ void setup() {
   Serial.println("Connected");
 
   server.on("/rc", checkArgs);
-  server.on("/rc/get_type", getType);
+  server.on("/get_type", getType);
 
   server.begin(); 
 }
