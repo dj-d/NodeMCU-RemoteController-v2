@@ -123,6 +123,20 @@ void checkArgs() {
     server.send(html_code, "text/json", message);
 }
 
+/**
+ * Send device type
+ */
+void getType() {
+    String data;
+    DynamicJsonDocument doc(1024);
+
+    doc["type"] = "remote_controller";
+
+    serializeJson(doc, data);
+
+    server.send(200, "text/json", data);
+}
+
 /*********************************************************************/
 
 void setup() {
@@ -150,6 +164,7 @@ void setup() {
   Serial.println("Connected");
 
   server.on("/rc", checkArgs);
+  server.on("/rc/get_type", getType);
 
   server.begin(); 
 }

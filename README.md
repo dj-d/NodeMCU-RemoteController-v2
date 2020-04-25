@@ -10,6 +10,7 @@ NodeMCU sketch to control IR devices
   | Description | Method | Endpoint | Body elements |
   | --- | --- | --- | --- |
   | To start the action described in the body | __POST__ | /rc | "*__action__*" |
+  | To receive the type of device | __GET__ | /rc/get_type | - |
 
 - __Supported actions__
 
@@ -43,6 +44,13 @@ NodeMCU sketch to control IR devices
     ```json
         {
           "msg": "SOME_MESSAGE"
+        }
+    ```
+  
+  - Response body for "*__/rc/get_type__*":
+    ```json
+        {
+          "type": "remote_controller"
         }
     ```
 
