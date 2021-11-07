@@ -148,7 +148,7 @@ void setup() {
   WiFiManager wifiManager;
 
   // Reset settings - for testing
-  wifiManager.resetSettings();
+  // wifiManager.resetSettings();
 
   wifiManager.setTimeout(180);
   wifiManager.setHostname("ESP_RC");
