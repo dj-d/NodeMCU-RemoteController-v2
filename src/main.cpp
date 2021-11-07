@@ -148,12 +148,12 @@ void setup() {
   WiFiManager wifiManager;
 
   // Reset settings - for testing
-  // wifiManager.resetSettings();
+  wifiManager.resetSettings();
 
   wifiManager.setTimeout(180);
-  wifiManager.setHostname("ESP_RemoteController");
+  wifiManager.setHostname("ESP_RC");
   
-  if(!wifiManager.autoConnect("ESP_RemoteController - Access Poinit")) {
+  if(!wifiManager.autoConnect("ESP_RC-AP")) {
     Serial.println("Failed to connect and hit timeout");
     delay(3000);
     
